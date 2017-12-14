@@ -1,7 +1,5 @@
 # Final Project - Physical Computing and the Internet of Things
 
-This is a template for your final project documentation.  Please replace <content like this> with your own.  For help with the syntax of Github markdown, visit: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
 *Name:*  Stephanie Fiddy  
 
 *Date:* 12/14/17
