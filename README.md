@@ -2,11 +2,11 @@
 
 This is a template for your final project documentation.  Please replace <content like this> with your own.  For help with the syntax of Github markdown, visit: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
-*Name:*  <Your Name>  
+*Name:*  Stephanie Fiddy  
 
-*Date:* <Date>
+*Date:* 12/14/17
 
-## Project:  < Name of your Project / Device Goes here >
+## Project:  < Chitech / Esp32 Thing >
 
 < 2 - 3 sentence brief description / abstract of your project>
 
