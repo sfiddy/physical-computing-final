@@ -4,9 +4,10 @@
 
 *Date:* 12/14/17
 
-## Project:  < Chitech / Esp32 Thing >
+## Project:  Chitech / Esp32 Thing
 
-< 2 - 3 sentence brief description / abstract of your project>
+Chitech is a psychometric IoT device that monitors your dog’s shaking patterns. Chitect is accompanied with the Chitech webapp in which gives you a better insight into the psychology of your pet. 
+
 
 ### Detailed Project Description
 
