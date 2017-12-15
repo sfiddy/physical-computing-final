@@ -32,7 +32,13 @@ There is both a utilitarian and an analytical component to Chitech. My prototype
 
 ![Fritzing](images/fritzing.png)
 ![Esp32 Thing Wiring](images/wiring.png)
-< Insert Picture and explanation of Your Wiring Diagram here >
+![Piezo Vibration Sensor](images/piezo-vibration-sensor.png)
+
+I chose to use the Esp32 thing because it is small enough to comfortably be attached to my five pound dog, Chloe. There was some prepping involved for getting the esp32 thing ready for use. First of all, I decided to solder some headers onto the microcontroller for easy connection. 
+
+I faced two challenges when working on the hardware. First of all, finding a sensor that accurately and consistenly detected vibrations was extremely challenging. At first I attempted to use an uncovered and covered Piezo Element, running multiple trials and comparing the results from each sensor. Despite countless trials, the piezo element continued to give variable and unrealiable vibration readings. 
+
+The Piezo Vibration Sensor proved to the most adequate sensor for Chitech since it accurately detected vibrations when the device was shaken. However the Piezo Vibration Sensor proved to only accurately detect a standard "shake" when it had a weight attached to it. As a solution to this problem, I chose to tape two nails onto the sensor since the nails were compact and heavy enough to product consistent results. I chose to tape the nails instead of gluing them for fear that the latter would potentially ruin the sensor. 
 
 #### Code
 
