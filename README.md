@@ -23,9 +23,13 @@ There is both a utilitarian and an analytical component to Chitech. My prototype
 
 ### Technical Description
 
-< Explain the "how" of your project.  What are the hardware components?  What are the software components?  How do they interact with each other? >
+For my project, size was of the upmost importance. Because I needed a device that would comfortably fit on my small dog, I decided to go with the Esp32 thing for various reasons. For one, the 'thing' is one of the smallest microcontrollers on the market. The Esp32 also has wifi compatibility and features a lithium-polymer (LiPo) battery port making it a compact and easily transportable device. Further explanation on the hardware used in and development of this project can be found in the "Hardware Wiring Diagram" sub-section below. 
 
-< You can also explain the development process here >
+I also developed a full stack website to support the Chitech product. The website consists of a bootstrap frontend, a flask backend and a sqlite3 database. This webapp provides the user with an interface to log the nature of the event that excited your dog.  I decided to produce a web application because it was the most suitable platform to couple with the physical device. The web's portability and multi-platform use made it the ideal interface for the on-the-go dog owner. 
+
+![POST Request Confirmation](images/post-request.png)
+
+The Esp32 thing connects with the webapp by sending an HTTP POST request to the flaskapp. The web app receives the post request and is intended to prompt the user to submit the "excitable event" that caused the dog to shake.  I was able to establish the connectivity between the Esp32 thing and the flask web app with very limited success. The arduino device confirms that the "shake value" is posting to the app, but unfortunately the web app does not appear to receive the value. This is likely due to the fact that the libraries for the Esp32 thing is still under development (as noted on the Sparkfun website). However, each individual component works independently and this was the missing piece to my project. 
 
 
 #### Hardware Wiring Diagram
