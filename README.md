@@ -228,4 +228,10 @@ With the increasing evolution of technology, policies such as those detailed abo
 
 ### Evaluation / Reflection
 
-< What is your own evaluation of your project?   What did you learn through this project?  What would you do differently in the future? >
+This project was an enriching experience. I have gained an arsenal of new skills from undergoing the process entailing the creation of Chitech. For one, I have gained invaluable knowledge on the nuances of 3D printing --especially when printing objects with enclosures as small as mine. It took 5 iterations of 3D printing just to achieve the desired size and fit for the circuitry. 
+
+Personally howevver, the most valuable skill that I gained from this project is that it gave me the opportunity to create my first full stack website. This project gave me the opportunity to tinker with the site's backend and storage infrastructure, which I had never done before. I now have a deeper understanding on the intereactions between these different components that constitutes a web app. 
+
+I am extremely satisfied with the outcome of my Chitech project and how the different aspects of the project came into fruition. In future projects where perhaps the size of the device is irrelevant, I would allocate more time researching the capabilities and limitations of the devices. I would focus my research on the capabilities of integration in a webapp.For instance, with the Sparkfun Photon, I was easily able to execute an HTTP post request but it proved extremely difficult to perform the same function in the Esp32 thing. 
+
+Overall I had a great time doing this project and I plan on expanding upon it in the future for my own use! 
