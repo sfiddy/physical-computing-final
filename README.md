@@ -6,7 +6,9 @@
 
 ## Project:  Chitech / Esp32 Thing
 
-Chitech is a psychometric IoT device that monitors your dog’s shaking patterns. Chitect is accompanied with the Chitech webapp in which gives you a better insight into the psychology of your pet. 
+![Chitech Logo](images/logo.png)
+
+Chitech is a psychometric IoT device that monitors your dog’s shaking patterns. Chitech is accompanied with the Chitech webapp in which gives you a better insight into the psychology of your pet. 
 
 
 ### Detailed Project Description
@@ -28,7 +30,8 @@ There is both a utilitarian and an analytical component to Chitech. My prototype
 
 #### Hardware Wiring Diagram
 
-![Wiring Diagram](images/WiringDiagram.png)
+![Fritzing](images/fritzing.png)
+![Esp32 Thing Wiring](images/wiring.png)
 < Insert Picture and explanation of Your Wiring Diagram here >
 
 #### Code
