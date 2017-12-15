@@ -190,11 +190,39 @@ class EEForm(FlaskForm):
 
 
 
-### Design / Form
+### Design / Form : Aesthetic Choices 
 
-< Explain the device's form, the aesthetic choices made and how they relate to the concept/function the device is intended to engage >
+As mentioned earlier in this Readme file, the size of the final product was of the upmost importance. Because of this, I chose to print an enclosure with a simple aesthetic. I chose to go with 3d printing a small box that was large enough to contain the Esp32 thing and the sensor.
 
-< include photos of your device >
+![Bottom enclosure](images/enclosure-esp32.jpg)
+
+I used a 'slide in' closing method to secure the top of the enclosure. Also, since this device has the option to be battery powered, I decided to dedicate a space for the battery enclosure on this top portion. The battery's position allows it to be easily plugged it and the battery does not come in contact with the dog's skin (reducing potential discomfort to the animal). 
+
+
+![Bottom enclosure](images/enclosure-battery-connected.jpg)
+
+
+With regards to the harness, I decided to go with a knit elastic because the strechy material would reduce discomfort for Chloe. In addition the elastic wrap makes it easy to adjust the device and allows the pet owner to strap it on as tightly as they please. 
+
+![Chloe device side](images/chloe-device-side.jpg)
+![Chloe device front](images/chloe-device.jpg)
+
+
+### Design / Form : Conceptual Engagement
+
+![Privacy Rights](images/enclosure-privacy.png)
+
+The handling and transmission of data collected from wearable technology is too often an afterthought to the consumer. I surrounded my enclosure with the privacy rights of a popular biometric collar for dogs, [PetPace](https://petpace.com/privacy-policy/). My choice for this aesthetic was to remind the consumer of the implications of using this technology. By pasting the privacy rights on the physical enclosure I challenge the user to contemplate the freedom they relinquish on any data collected from the device. 
+
+Examples of some of the excerpts you will find in the enclosure are the following adpated from PetPace's Privacy Policy:
+
+For one, Pets' data is considered as non-confidential information --despite the fact that PetPace is a biometric technology that collects health related data to your pet. 
+> Pets' Data is non-identifiable nor shall be considered as peronsal information. Such information shall be deemed to be non-confidential.
+
+Additionally, the company is distribute to use that data at their own discretion:
+> Pets Data may also be used by us for performing future research, enhancing our products capabilities or for any other purpose, commerciail or otherwise and **may be freely displayed, shared or sold by us.**
+
+With the increasing evolution of technology, policies such as those detailed above are concerning. As technology gets more sophisticated, at what point would pets' data be protected? 
 
 ### Evaluation / Reflection
 
