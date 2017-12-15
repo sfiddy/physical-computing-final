@@ -1,0 +1,82 @@
+/*
+**********************
+**** Color Scheme ****
+**********************
+
+Dark Grey: 	#21262B
+Mid Grey: 	#424C55
+Light Grey:	#A6B2BC
+White: 		#FCFCFC
+Orange: 	#EE6C4D
+
+*/
+body {
+	background-color: #FCFCFC;
+	width: 100%;
+}
+
+a {
+	font-size: 18px;
+}
+
+p {
+	font-size: 20px;
+}
+.row {
+	background-color: #FCFCFC;
+	padding: 10px;
+}
+
+.navbar-custom {
+	background-color: #424C55;
+	/*width: 100%;*/
+	text-align: center;
+}
+
+.search-bar {
+	float: right;
+}
+
+.navbar-nav {
+	/*padding: 10px 30px 10px 30px; */
+}
+
+.navbar-brand {
+	width: 50px;
+}
+
+.nav-link, .dropdown-item {
+	color: #FCFCFC;
+	padding: 0px 20px 0px 20px;
+}
+
+.dropdown-item {
+	color: #424C55;
+}
+
+.header-text {
+	color: #EE6C4D;
+	padding: 20px 0px 20px 0px;
+}
+
+.dark-bg {
+	background-color: #A6B2BC;
+}
+
+.light-bg {
+	background-color: #FCFCFC;
+}
+
+.h2-text {
+	padding: 30px 0px 30px 0px;
+}
+
+.intro-text {
+	color: #21262B;
+	padding-bottom: 60px;
+}
+
+
+
+
+

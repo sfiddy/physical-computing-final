@@ -1,0 +1,45 @@
+/* CSS FOR HOMEPAGE */
+
+/*
+**********************
+**** Color Scheme ****
+**********************
+
+Dark Grey: 	#21262B
+Mid Grey: 	#424C55
+Light Grey:	#A6B2BC
+White: 		#FCFCFC
+Orange: 	#EE6C4D
+
+*/
+
+body {
+	background-color: #FCFCFC;
+}
+
+.navbar-custom {
+	background-color: #424C55;
+	text-align: inherit;
+}
+
+.row {
+	background-color: #FCFCFC;
+	padding: 10px;
+}
+
+#header-row {
+	padding: 30px 0px 30px 0px;
+	height: 100vh;
+}
+
+.header-text {
+	color: #EE6C4D;
+	/*padding: 20px 0px 20px 0px;*/
+	font-size: 70px;
+	/*vertical-align: middle;*/
+}
+
+.logo {
+	width: 80%;
+	
+}
