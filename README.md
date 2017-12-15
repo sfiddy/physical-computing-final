@@ -44,14 +44,115 @@ I faced two challenges when working on the hardware. First of all, finding a sen
 
 The Piezo Vibration Sensor proved to the most adequate sensor for Chitech since it accurately detected vibrations when the device was shaken. However the Piezo Vibration Sensor proved to only accurately detect a standard "shake" when it had a weight attached to it. As a solution to this problem, I chose to tape two nails onto the sensor since the nails were compact and heavy enough to product consistent results. I chose to tape the nails instead of gluing them for fear that the latter would potentially ruin the sensor. 
 
-#### Code
+#### Code - Arduino 
 
-< Explain your code.  You might include code snippets, either `inline` or
-```c++
-//Multiline
-bool photon_fun = TRUE;
+Please refer to [chitech.ino](code/chitech.ino) for the complete code that I used on the arduino. 
+
+In order to get the vibration sensor properly working, I first read the Piezo Vibration sensor's ADC value in and converted in into a voltage:  
+```c
+// Within the void loop() function
+  int piezoADC = analogRead(PIEZO_PIN);
+  float piezoV = piezoADC / 1023.0 * 5.0;
 ```
-You should link to your full code, either included in the repository (e.g. [my_code.ino](code/my_code.ino)  or to the Shared Revision in your Particle IDE. >
+
+Since I calibrated the ADC value coming from the Piezo sensor, a "shake" was detected if the **piezoV** value was greater than 0.00. If the value was greater than 0, then the shakeValue of **1** would be posted to the flask app. I used the **WiFiClient** and **ArduinoHTTPClient** libraries for supporting the POST request transmission. 
+
+```c
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiServer.h>
+#include <WiFiUdp.h>
+
+#include <ArduinoHttpClient.h>
+
+// ... other code not shown
+  if (piezoV > 0.00 ) {
+      Serial.println("Shake detected. Commencing Post...");
+      PostData = "{\"id\": \"2\", \"shakeValue\": \"1\"}";
+      Serial.println("making POST request");
+    
+      client.beginRequest();
+      client.post("/postjson");
+      client.sendHeader("Content-Type", "application/json");
+      client.sendHeader("Content-Length", PostData.length());
+      client.sendHeader("X-Custom-Header", "custom-header-value");
+      client.beginBody();
+      client.print(PostData);
+      client.endRequest();
+      Serial.println("Post Request Made");
+      // read the status code and body of the response
+      statusCode = client.responseStatusCode();
+      response = client.responseBody();
+    
+      Serial.print("Status code: ");
+      Serial.println(statusCode);
+      Serial.print("Response: ");
+      Serial.println(response);
+    
+      Serial.println("Wait five seconds");
+      delay(5000);
+  }
+```
+#### Code - Flask Web App
+Please refer to [app.py](code/flaskwebapp/app.py) for the routing code that I used for the flask app. Please see the folder *flaskwebapp* for the entire web project. Note - there were too many flask libraries to upload to github. Therefore, I have not included the standard files that are imported when you setup flask. 
+
+The web app is composed of three separate components:
+
+1. Frontend: Bootstrap
+2. Backend: Flask
+3. Database: Sqlite3
+
+
+##### Frontend: Bootstrap
+
+After completing the flask setup process (which entailed downloading the flask libraries and setting up the proper file hiearachy), I imported bootstrap to the proper files. 
+
+This included importing the module into the **app.py** file and initializing the Bootstrap object:
+
+```python
+# from app.py file
+from flask_bootstrap import Bootstrap
+# ...
+Bootstrap(app)
+```
+
+I also imported the bootstraps modules in the html files. Bootstrap/wtf is the module that allows forms to be generated with flask and a bootstrap frontend:
+
+```html
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+```
+
+##### Backend: Flask
+
+For the sake of brevity, I will not go into detail on how I set up flask. Here I will explain how I generated the forms with flask and the process in which I used for the POST request. 
+
+For generating the forms, I created a new route function **postJsonHandler()** that receives the HTTP post request and renders the form template. I start by adding the 'GET' & 'POST' methods to the route function and reading in the HTTP post request with the .get_json() function. If the request method is a POST, I create a new event that generates a new row under the unique user (queried by "id"). 
+
+The form is created by calling the EEForm() function and rendered to jsonpost.html
+
+```python
+# Post Route
+@app.route('/postjson', methods = ['GET', 'POST'])
+def postJsonHandler():
+     content = request.get_json()
+      # EE Form
+     form = EEForm()
+
+     if request.method == 'POST':
+	     val = content['shakeValue']
+	     other_val = content['id']
+
+	     events = EventTable.query.all()
+# ....
+
+	     new_event = EventTable(id=1, user_id=current_user, toy=0, treat=0, praise=int(val))
+# ....
+	     return render_template('jsonpost.html',form=form, events=events, val=int(val))
+
+```
+
+
 
 
 ### Design / Form
