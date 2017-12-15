@@ -19,7 +19,9 @@ Small dogs, especially Chihuahuas are known to respond to excitement by shaking.
 
 When the Chitech device detects that the dog is shaking, it transmits that data to the webapp. The webapp then prompts the user to record the nature of the event that triggered the excitable response. Through time, the user is able to analyze the data collected in order to get a deeper understanding of their dog's motivations and preferences. 
 
-There is both a utilitarian and an analytical component to Chitech. My prototype explores how the data collected from our beloved pets is being protected and disseminated by the companies selling these wearable devices. 
+There is both a utilitarian and an analytical component to Chitech. My prototype explores how the data collected from our beloved pets is being protected and disseminated by the companies selling these wearable devices. My hopes for this project is to begin a dialog on  privacy rights when related to animal data. Is animal data considered confidential? If it’s confidential, is it shared with other 3rd party companies? And if it is not confidential, then how is animal data usually handled? Where is the data going? I attempt to answer some of these questions in the *Design / Form : Conceptual Engagement* section
+
+
 
 ### Technical Description
 
