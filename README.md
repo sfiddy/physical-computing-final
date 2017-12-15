@@ -155,6 +155,41 @@ def postJsonHandler():
 
 
 
+##### Database: Sqlite3
+
+In order to user sqlite3 with flask, I imported the SQLAlchemy module and initiliazed the database (named **db**): 
+
+```python
+from flask_sqlalchemy import SQLAlchemy
+# ...
+app.config["SECRET_KEY"] = 'Thisismysecretkey'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/steph/Dropbox/Academic/Duke/_Fall-2017/projects/myflaskapp/database.db'
+db = SQLAlchemy(app)
+```
+
+I first created the SQL database table with the columns id, user_id, toy, treat and praise:
+
+```python
+class EventTable(db.Model):
+	__tablename__ = 'event'
+	id = db.Column(db.Integer, primary_key=True)
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+	toy = db.Column(db.Integer)
+	treat = db.Column(db.Integer)
+	praise = db.Column(db.Integer)
+```
+
+I then generated the Form fields and rendered the template to jsonpost.html (see postJSONHandler for rendering):
+
+```python
+class EEForm(FlaskForm):
+	exitableEvent = RadioField('Excitable Events', validators=[InputRequired(), Length(max=6)], choices = [('treat','treat'),('toy','toy'), ('praise', 'praise')])	
+```
+![Homepage screenshot](images/homepage.png)
+![Excitable Event Form screenshot](images/jsonpost.png)
+
+
+
 ### Design / Form
 
 < Explain the device's form, the aesthetic choices made and how they relate to the concept/function the device is intended to engage >
